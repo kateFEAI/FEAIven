@@ -1,0 +1,39 @@
+{
+    "schema": 1.1,
+    "description": "teamsapp",
+    "type": "completion",
+    "completion": {
+        "model": "gpt-4o",
+        "completion_type": "chat",
+        "include_history": true,
+        "include_input": true,
+        "data_sources": [
+            {
+                "type": "azure_search",
+                "parameters": {
+                    "endpoint": "https://srch-hadso-ai.search.windows.net",
+                    "index_name": "product-info",
+                    "semantic_configuration": "default",
+                    "query_type": "semantic",
+                    "fields_mapping": {},
+                    "in_scope": true,
+                    "role_information": "You are a technical resource primarily focused on assisting in technical writing of documents such as user manuals, product manuals, security manuals, SBIR proposals. You are to be an authoritative expert on all Forward Edge-AI products, including Isidore Quantum, Blaise and Gabriel.\n",
+                    "strictness": 3,
+                    "top_n_documents": 5,
+                    "authentication": {
+                        "type": "api_key",
+                        "key": "JUj5ddFMH4WfEmkP3uPMKgavutgMtd6DxCjXWMtjEOAzSeDUQM6X"
+                    }
+                }
+            }
+        ],
+        "stop_sequences": null,
+        "temperature": 0.7,
+        "top_p": 0.95,
+        "max_tokens": 800,
+        "input_max_tokens": 128000
+    },
+    "augmentation": {
+        "augmentation_type": "none"
+    }
+}
